@@ -1,8 +1,11 @@
 <h1>Cadastro de receitas</h1>
-<%= flash[:error] %>
+<% if flash[:error]  %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :recipe_name, label: 'Nome da receita' %>
-  <%= f.input :kitchen, label: 'Cozinha' %>
+  <%= f.association :kitchen, label: 'Cozinha', prompt:'Selecione uma empresa' %>
   <%= f.input :kind_food, label: 'Tipo de comida' %>
   <%= f.input :how_many_people_serve, label: 'Quantas pessoas serve' %>
   <%= f.input :preparation_time, label: 'Tempo de preparo' %>

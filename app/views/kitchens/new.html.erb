@@ -1,0 +1,10 @@
+<h1>Cadastro de Cozinhas</h1>
+
+<% if flash[:error]  %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
+<%= simple_form_for @kitchen do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.submit 'Cadastrar Cozinha', class: 'btn btn-primary'%>
+<% end %>
