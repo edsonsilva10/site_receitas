@@ -1,0 +1,14 @@
+<h1>Receitas</h1>
+<p><a href="http://localhost:3000/recipes/new" class="btn btn-primary btn-lg
+  active" role="button" aria-pressed="true">Cadastrar Receita</a></p>
+<% @recipe.each do |recipe|%>
+  <h2><p><%= recipe.recipe_name%></p></h2>
+  <p><strong>Cozinha:</strong> <%= recipe.kitchen%></p>
+  <p><strong>Tipo de comida:</strong> <%= recipe.kind_food%></p>
+  <p><strong>Quantas pessoas serve:</strong> <%= recipe.how_many_people_serve%>
+  </p>
+  <p><strong>Tempo de preparo:</strong> <%= recipe.preparation_time%></p>
+  <p><strong>Nível de dificuldade:</strong> <%= recipe.difficulty_level%></p>
+  <p><strong>Ingredientes:</strong> <%= recipe.ingredients%></p>
+  <p><strong>Passo a passo:</strong> <%= recipe.step_by_step%></p>
+<%end%>

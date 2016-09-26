@@ -1,5 +1,5 @@
 <h1>Cadastro de receitas</h1>
-
+<%= flash[:error] %>
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :recipe_name, label: 'Nome da receita' %>
   <%= f.input :kitchen, label: 'Cozinha' %>
@@ -9,5 +9,5 @@
   <%= f.input :difficulty_level, label: 'Nível de dificuldade' %>
   <%= f.input :ingredients, label: 'Ingredientes' %>
   <%= f.input :step_by_step, label: 'Passo a passo' %>
-  <%= f.submit 'Cadastrar Receita'%>
+  <%= f.submit 'Cadastrar Receita', class: 'btn btn-primary'%>
 <% end %>

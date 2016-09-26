@@ -1,7 +1,6 @@
 require 'rails_helper'
 feature 'user create recipe' do
   scenario 'successfully' do
-
     recipe = build(:recipe)
 
     visit new_recipe_path
@@ -25,5 +24,15 @@ feature 'user create recipe' do
     expect(page).to have_content recipe.difficulty_level
     expect(page).to have_content recipe.ingredients
     expect(page).to have_content recipe.step_by_step
+  end
+
+    scenario 'unsuccessfully' do
+      visit new_recipe_path
+
+      fill_in 'Nome da receita', with: ''
+
+      click_on 'Cadastrar Receita'
+
+      expect(page).to have_content('Todos campos são obrigatórios')
   end
 end
