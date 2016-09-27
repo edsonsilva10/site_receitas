@@ -1,6 +1,7 @@
 <h1>Receita</h1>
+<p><%= image_tag @recipe.image.url(:medium) %></p>
 <p><strong>Nome da receita:</strong> <%= @recipe.recipe_name %></p>
-<p><strong>Cozinha:</strong> <%= @recipe.kitchen %></p>
+<p><strong>Cozinha:</strong> <%= @recipe.kitchen.name %></p>
 <p><strong>Tipo de comida:</strong> <%= @recipe.kind_food %></p>
 <p><strong>Quantas pessoas serve:</strong> <%= @recipe.how_many_people_serve %></p>
 <p><strong>Tempo de preparo:</strong> <%= @recipe.preparation_time %></p>

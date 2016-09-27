@@ -6,6 +6,9 @@
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :recipe_name, label: 'Nome da receita' %>
   <%= f.association :kitchen, label: 'Cozinha', prompt:'Selecione uma empresa' %>
+
+  <%= f.input :image, as: :file, label: 'Imagem' %>
+    
   <%= f.input :kind_food, label: 'Tipo de comida' %>
   <%= f.input :how_many_people_serve, label: 'Quantas pessoas serve' %>
   <%= f.input :preparation_time, label: 'Tempo de preparo' %>
